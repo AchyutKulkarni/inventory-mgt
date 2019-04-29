@@ -153,11 +153,11 @@ this.dispose();
         if(found)
             JOptionPane.showMessageDialog(null,"model no:"+mn+"\nmodel name:"+nam+"\ntype:"+t+"\nmagzine:"+m+"\ndamage:"+d+"\naccuracy:"+a+"\navailability:"+av+"\nprice:"+pr);
         else
-            JOptionPane.showMessageDialog(null,"Record not found");
+            JOptionPane.showMessageDialog(null,"Record not found","Error", JOptionPane.ERROR_MESSAGE);
     
     }   
     catch (Exception ex) {
-            JOptionPane.showMessageDialog(null,"Record not found");
+            JOptionPane.showMessageDialog(null,"Record not found","Error", JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
