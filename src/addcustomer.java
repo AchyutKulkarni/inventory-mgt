@@ -287,15 +287,17 @@ try{
 BufferedWriter writer = new BufferedWriter(
                                 new FileWriter("C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\customer.txt", true));
 
+
 writer.write(cid);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
 writer.write(name);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
 writer.write(email);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
 writer.write(ad);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
 writer.write(no);
+writer.write(System.getProperty("path.separator"));
 writer.newLine();
 writer.close();
 JOptionPane.showMessageDialog(rootPane,"Success");

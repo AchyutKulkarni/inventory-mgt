@@ -185,11 +185,13 @@ try{
 BufferedWriter writer = new BufferedWriter(
                                 new FileWriter("C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\log.txt", true));
 
+
 writer.write(cid);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
 writer.write(model);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
 writer.write(no);
+writer.write(System.getProperty("path.separator"));
 writer.newLine();
 writer.close();
 JOptionPane.showMessageDialog(rootPane,"Success");

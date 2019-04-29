@@ -1,4 +1,9 @@
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /*
@@ -119,7 +124,42 @@ this.dispose();
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
     String p=JOptionPane.showInputDialog(this,"Enter model number");
-      // TODO add your handling code here:
+        boolean found=false;
+    String mn="";
+    String nam="";
+    String t="";
+    String m="";
+    String a="";
+    String d="";
+    String av="";
+    String pr="";
+    Scanner x;
+    try{
+        String filePath = "C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\inventory.txt";
+        x=new Scanner(new File(filePath));
+        x.useDelimiter("[;\n]");
+        while(x.hasNext()&&!found){
+            mn=x.next();
+            nam=x.next();
+            t=x.next();
+            m=x.next();
+            d=x.next();
+            a=x.next();
+            av=x.next();
+            pr=x.next();
+            if(p.equals(mn))
+                found=true;
+        }
+        if(found)
+            JOptionPane.showMessageDialog(null,"model no:"+mn+"\nmodel name:"+nam+"\ntype:"+t+"\nmagzine:"+m+"\ndamage:"+d+"\naccuracy:"+a+"\navailability:"+av+"\nprice:"+pr);
+        else
+            JOptionPane.showMessageDialog(null,"Record not found");
+    
+    }   
+    catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,"Record not found");
+        }
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

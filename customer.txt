@@ -1,2 +1,2 @@
-420|phani|jai@gmail.com|bengaluru|223322
-143|jittu|jitts@gmail.com|davangere|223323
+007;bond;bi@gmail.com;london;223323;
+009;hr;hr@gmail.com;earth2;123321;

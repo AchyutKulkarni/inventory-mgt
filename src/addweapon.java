@@ -382,23 +382,32 @@ String av=jTextField7.getText().toString();
 String price=jTextField8.getText().toString();
 try{
 BufferedWriter writer = new BufferedWriter(
-                                new FileWriter("C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\inveentory.txt", true));
+                                new FileWriter("C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\inventory.txt", true));
+
 
 writer.write(modelno);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
+
 writer.write(modelname);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
+
 writer.write(type);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
+
 writer.write(magzine);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
+
 writer.write(damage);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
+
 writer.write(acc);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
+
 writer.write(av);
-writer.write("|");
+writer.write(System.getProperty("path.separator"));
+
 writer.write(price);
+//writer.write(System.getProperty("path.separator"));
 writer.newLine();
 writer.close();
 JOptionPane.showMessageDialog(rootPane,"Success");

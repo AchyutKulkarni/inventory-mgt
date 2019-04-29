@@ -22,7 +22,7 @@ public class vc extends javax.swing.JFrame {
      * Creates new form vc
      */
     public vc() {
-        initComponents();
+         initComponents();
         String filePath = "C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\customer.txt";
         File file = new File(filePath);
         
@@ -34,13 +34,12 @@ public class vc extends javax.swing.JFrame {
             Object[] lines = br.lines().toArray();
             
             for(int i = 0; i < lines.length; i++){
-                String row = lines[i].toString().trim();
-                String[] dataRow=row.split("|");
-                model.addRow(dataRow);
+                String[] row = lines[i].toString().split(";");
+                model.addRow(row);
             }
             
         } catch (FileNotFoundException ex) {
-            JOptionPane.showMessageDialog(rootPane,"Error"); 
+            JOptionPane.showMessageDialog(vc.this, "Error","Error", JOptionPane.ERROR_MESSAGE); 
         }
     }
 
