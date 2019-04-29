@@ -40,7 +40,6 @@ public class addcustomer extends javax.swing.JFrame {
         jTextField6 = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
@@ -103,16 +102,6 @@ public class addcustomer extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Add Customers");
 
-        jTextField1.setText("CustomerID");
-        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField1FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField1FocusLost(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -123,7 +112,6 @@ public class addcustomer extends javax.swing.JFrame {
                         .addGap(75, 75, 75)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
                             .addComponent(jTextField8)
                             .addComponent(jTextField7)
                             .addComponent(jTextField6)
@@ -138,9 +126,7 @@ public class addcustomer extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(71, 71, 71)
                 .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -156,7 +142,7 @@ public class addcustomer extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dlogo.jpg"))); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("X");
+        jButton1.setText("<-");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,33 +248,26 @@ public class addcustomer extends javax.swing.JFrame {
         jTextField5.setForeground(new Color(0,0,0));          // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5FocusLost
 
-    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-        if(jTextField1.getText().equals("CustomerID")){
-            jTextField1.setText("");
-        }
-        jTextField1.setForeground(Color.black);        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1FocusGained
-
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
-        if(jTextField1.getText().equals("")){
-            jTextField1.setText("CustomerID");
-        }
-        jTextField1.setForeground(new Color(0,0,0));         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1FocusLost
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-String cid=jTextField1.getText().toString();
 String name=jTextField8.getText().toString();
+int cid=name.hashCode();
 String email=jTextField7.getText().toString();
 String ad=jTextField6.getText().toString();
 String no=jTextField5.getText().toString();
-
+if(search.searchcust(name)){
+    JOptionPane.showMessageDialog(addcustomer.this,"Record with same name exists","Error", JOptionPane.ERROR_MESSAGE); 
+    jTextField8.setText("Name");
+jTextField7.setText("Email");
+jTextField6.setText("Address");
+jTextField5.setText("Contact number");
+}
+else{
 try{
 BufferedWriter writer = new BufferedWriter(
                                 new FileWriter("C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\customer.txt", true));
 
 
-writer.write(cid);
+writer.write(new Integer(cid).toString());
 writer.write(System.getProperty("path.separator"));
 writer.write(name);
 writer.write(System.getProperty("path.separator"));
@@ -300,16 +279,17 @@ writer.write(no);
 writer.write(System.getProperty("path.separator"));
 writer.newLine();
 writer.close();
-JOptionPane.showMessageDialog(rootPane,"Success");
+JOptionPane.showMessageDialog(rootPane,"Hash value:"+cid);
 jTextField8.setText("Name");
 jTextField7.setText("Email");
 jTextField6.setText("Address");
 jTextField5.setText("Contact number");
-jTextField1.setText("CustomerID");
+
 
 }catch(Exception e){
    JOptionPane.showMessageDialog(rootPane,"Error"); 
-}        // TODO add your handling code here:
+}   
+}// TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -354,7 +334,6 @@ jTextField1.setText("CustomerID");
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;

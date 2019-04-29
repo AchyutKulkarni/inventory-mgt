@@ -62,13 +62,18 @@ public class buy extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setText("Model number");
+        jTextField1.setText("Model name");
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField1FocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextField1FocusLost(evt);
+            }
+        });
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
             }
         });
 
@@ -82,7 +87,7 @@ public class buy extends javax.swing.JFrame {
             }
         });
 
-        jTextField2.setText("CustomerID");
+        jTextField2.setText("Customer name");
         jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextField2FocusGained(evt);
@@ -132,7 +137,7 @@ public class buy extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dlogo.jpg"))); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("X");
+        jButton1.setText("<-");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,17 +183,19 @@ public class buy extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-String cid=jTextField2.getText().toString();
-String model=jTextField1.getText().toString();
+String cname=jTextField2.getText().toString();
+String modelnam=jTextField1.getText().toString();
 String no=jTextField5.getText().toString();
+
+if(search.searchcust(cname)&&search.search(modelnam)){
 try{
 BufferedWriter writer = new BufferedWriter(
                                 new FileWriter("C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\log.txt", true));
 
 
-writer.write(cid);
+writer.write(cname);
 writer.write(System.getProperty("path.separator"));
-writer.write(model);
+writer.write(modelnam);
 writer.write(System.getProperty("path.separator"));
 writer.write(no);
 writer.write(System.getProperty("path.separator"));
@@ -196,11 +203,15 @@ writer.newLine();
 writer.close();
 JOptionPane.showMessageDialog(rootPane,"Success");
 jTextField5.setText("No. of pieces");
-jTextField2.setText("CustomerID");
-jTextField1.setText("Model number");
+jTextField2.setText("Customer name");
+jTextField1.setText("Model name");
 }catch(Exception e){
    JOptionPane.showMessageDialog(rootPane,"Error"); 
-}        // TODO add your handling code here:        // TODO add your handling code here:
+} 
+}
+
+else
+JOptionPane.showMessageDialog(buy.this,"Invalid entry","Error", JOptionPane.ERROR_MESSAGE);// TODO add your handling code here:        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -209,7 +220,7 @@ jTextField1.setText("Model number");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-        if(jTextField1.getText().equals("Model number")){
+        if(jTextField1.getText().equals("Model name")){
             jTextField1.setText("");
         }
         jTextField1.setForeground(Color.black);          // TODO add your handling code here:
@@ -217,7 +228,7 @@ jTextField1.setText("Model number");
 
     private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
         if(jTextField1.getText().equals("")){
-            jTextField1.setText("Model number");
+            jTextField1.setText("Model name");
         }
         jTextField1.setForeground(new Color(0,0,0));          // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1FocusLost
@@ -237,7 +248,7 @@ jTextField1.setText("Model number");
     }//GEN-LAST:event_jTextField5FocusLost
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
-        if(jTextField2.getText().equals("CustomerID")){
+        if(jTextField2.getText().equals("Customer name")){
             jTextField2.setText("");
         }
         jTextField2.setForeground(Color.black);             // TODO add your handling code here:
@@ -245,10 +256,14 @@ jTextField1.setText("Model number");
 
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
         if(jTextField2.getText().equals("")){
-            jTextField2.setText("CustomerID");
+            jTextField2.setText("Customer name");
         }
         jTextField2.setForeground(new Color(0,0,0));          // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2FocusLost
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments

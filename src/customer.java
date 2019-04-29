@@ -48,7 +48,7 @@ public class customer extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("X");
+        jButton1.setText("<-");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +123,7 @@ this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-    String p=JOptionPane.showInputDialog(this,"Enter model number");
+    String p=JOptionPane.showInputDialog(this,"Enter model name");
         boolean found=false;
     String mn="";
     String nam="";
@@ -147,7 +147,7 @@ this.dispose();
             a=x.next();
             av=x.next();
             pr=x.next();
-            if(p.equals(mn))
+            if(p.equals(nam))
                 found=true;
         }
         if(found)

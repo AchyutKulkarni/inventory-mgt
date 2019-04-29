@@ -1,0 +1,3 @@
+bond;pistol;6;
+hr;ak47;2;
+bond;ak47;1;

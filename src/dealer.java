@@ -50,7 +50,7 @@ public class dealer extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("X");
+        jButton1.setText("<-");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,8 +139,8 @@ this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-//this.dispose();
-//        log.main(new String[] {});          // TODO add your handling code here:
+this.dispose();
+        log.main(new String[] {});          // TODO add your handling code here:
     }//GEN-LAST:event_jLabel3MouseClicked
 
     /**

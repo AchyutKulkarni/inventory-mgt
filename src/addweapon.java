@@ -34,7 +34,6 @@ public class addweapon extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
@@ -52,16 +51,6 @@ public class addweapon extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
-
-        jTextField1.setText("Model number");
-        jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextField1FocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jTextField1FocusLost(evt);
-            }
-        });
 
         jTextField2.setText("Model name");
         jTextField2.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -158,22 +147,22 @@ public class addweapon extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField8)
-                            .addComponent(jTextField7)
-                            .addComponent(jTextField6)
-                            .addComponent(jTextField5)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(8, 8, 8)
-                                .addComponent(jLabel2))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(166, 166, 166)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jTextField8)
+                                .addComponent(jTextField7)
+                                .addComponent(jTextField6)
+                                .addComponent(jTextField5)
+                                .addComponent(jTextField4)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                                .addGroup(jPanel2Layout.createSequentialGroup()
+                                    .addGap(8, 8, 8)
+                                    .addComponent(jLabel2))))))
                 .addContainerGap(81, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -181,21 +170,19 @@ public class addweapon extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addComponent(jLabel2)
-                .addGap(54, 54, 54)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
                 .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
                 .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
@@ -203,7 +190,7 @@ public class addweapon extends javax.swing.JFrame {
         );
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("X");
+        jButton1.setText("<-");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,13 +241,6 @@ public class addweapon extends javax.swing.JFrame {
         this.dispose();
         dealer.main(new String[] {});        // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusGained
-if(jTextField1.getText().equals("Model number")){
-            jTextField1.setText("");
-        }
-        jTextField1.setForeground(Color.black);          // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1FocusGained
 
     private void jTextField2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusGained
 if(jTextField2.getText().equals("Model name")){
@@ -315,13 +295,6 @@ if(jTextField8.getText().equals("Price")){
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jTextField1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField1FocusLost
-if(jTextField1.getText().equals("")){
-            jTextField1.setText("Model number");
-        }
-        jTextField1.setForeground(new Color(0,0,0));          // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1FocusLost
-
     private void jTextField2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField2FocusLost
 if(jTextField2.getText().equals("")){
             jTextField2.setText("Model name");
@@ -372,20 +345,31 @@ if(jTextField8.getText().equals("")){
     }//GEN-LAST:event_jTextField8FocusLost
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-String modelno=jTextField1.getText().toString();
 String modelname=jTextField2.getText().toString();
+int modelno=modelname.hashCode();
 String type=jTextField3.getText().toString();
 String magzine=jTextField4.getText().toString();
 String damage=jTextField5.getText().toString();
 String acc=jTextField6.getText().toString();
 String av=jTextField7.getText().toString();
 String price=jTextField8.getText().toString();
+if(search.search(modelname)){
+    JOptionPane.showMessageDialog(addweapon.this,"Record with same name exists","Error", JOptionPane.ERROR_MESSAGE); 
+    jTextField2.setText("Model name");
+jTextField3.setText("Fire rate type");
+jTextField4.setText("Magazine");
+jTextField5.setText("Damage");
+jTextField6.setText("Accuracy");
+jTextField7.setText("Availability");
+jTextField8.setText("Price");
+}
+else{
 try{
 BufferedWriter writer = new BufferedWriter(
                                 new FileWriter("C:\\Users\\achuu\\Documents\\NetBeansProjects\\inventory\\inventory.txt", true));
 
 
-writer.write(modelno);
+writer.write(new Integer(modelno).toString());
 writer.write(System.getProperty("path.separator"));
 
 writer.write(modelname);
@@ -410,19 +394,20 @@ writer.write(price);
 //writer.write(System.getProperty("path.separator"));
 writer.newLine();
 writer.close();
-JOptionPane.showMessageDialog(rootPane,"Success");
-jTextField1.setText("Model number");
+JOptionPane.showMessageDialog(rootPane,"Hash value:"+modelno);
+
 jTextField2.setText("Model name");
 jTextField3.setText("Fire rate type");
 jTextField4.setText("Magazine");
 jTextField5.setText("Damage");
 jTextField6.setText("Accuracy");
+jTextField7.setText("Availability");
 jTextField8.setText("Price");
 
 }catch(Exception e){
    JOptionPane.showMessageDialog(rootPane,"Error"); 
 }
-// TODO add your handling code here:
+}// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -467,7 +452,6 @@ jTextField8.setText("Price");
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
