@@ -140,7 +140,7 @@ this.dispose();
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
 this.dispose();
-        log.main(new String[] {});          // TODO add your handling code here:
+        log.main(new String[] {});            // TODO add your handling code here:
     }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
