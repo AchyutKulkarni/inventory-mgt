@@ -194,7 +194,7 @@ public class vw extends javax.swing.JFrame {
             
         }
         else{
-            JOptionPane.showMessageDialog(null,"Delete error","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Error,Select a row","Error",JOptionPane.ERROR_MESSAGE);
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -250,7 +250,7 @@ public class vw extends javax.swing.JFrame {
             }
         }
   else
-            JOptionPane.showMessageDialog(vw.this, "Modify Error","Error", JOptionPane.ERROR_MESSAGE);// TODO add your handling code here:
+            JOptionPane.showMessageDialog(vw.this, "Error,Select a row","Error", JOptionPane.ERROR_MESSAGE);// TODO add your handling code here:
 
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed

@@ -187,7 +187,7 @@ int i = jTable1.getSelectedRow();
             
         }
         else{
-            JOptionPane.showMessageDialog(null,"Delete error","Error",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Error,Select a row","Error",JOptionPane.ERROR_MESSAGE);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -239,7 +239,7 @@ int i = jTable1.getSelectedRow();
             }
         }
   else
-            JOptionPane.showMessageDialog(vc.this, "Modify Error","Error", JOptionPane.ERROR_MESSAGE);// TODO add your handling code here:
+            JOptionPane.showMessageDialog(vc.this, "Error,Select a row","Error", JOptionPane.ERROR_MESSAGE);// TODO add your handling code here:
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 

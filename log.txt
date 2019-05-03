@@ -1,3 +1,1 @@
-james bond;pistol;2
-barry allen;ak47;1
-james bond;ak47;1
+bond;pistol;5000;
