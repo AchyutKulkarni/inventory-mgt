@@ -136,13 +136,16 @@ public class cv_w extends javax.swing.JFrame {
   DefaultTableModel model = (DefaultTableModel) cvwjTable1.getModel();
   if((i>=0)){
       String p1=JOptionPane.showInputDialog(this,"Enter user name");
-      String p2=JOptionPane.showInputDialog(this,"Enter no of pieces");
-   int c=Integer.parseInt(p2);
-   int b=Integer.parseInt((String) model.getValueAt(i, 6));
-              int d=b-c;
+      
+   
               
           if(search.searchcust(p1)){
+              String p2=JOptionPane.showInputDialog(this,"Enter no of pieces");
+              int c=Integer.parseInt(p2);
+   int b=Integer.parseInt((String) model.getValueAt(i, 6));
+              int d=b-c;
               if((d>=0)){
+                 
               
       model.setValueAt(d,i,6);
       String y=(String) model.getValueAt(i, 1);

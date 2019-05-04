@@ -1,1 +1,3 @@
 bond;pistol;5000;
+bond;ak47;1;
+bond;model;1;

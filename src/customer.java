@@ -126,8 +126,10 @@ this.dispose();
             av=stringcontents[6];
             pr=stringcontents[7];
             
-            if(nam.equals(p1))
+            if(p1.equals(nam)){
                 found=true;
+                break;
+            }
             line = br.readLine();
         }
         if(found)
